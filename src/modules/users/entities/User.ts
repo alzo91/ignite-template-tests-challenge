@@ -33,7 +33,7 @@ export class User {
   updated_at: Date;
 
   constructor() {
-    if (!this.id) {
+    if (!this.id && process.env.NODE_ENV === "test") {
       this.id = uuid();
     }
   }
